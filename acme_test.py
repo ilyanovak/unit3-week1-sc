@@ -1,6 +1,6 @@
 import unittest
 from acme import Product
-from acme_report import *
+from acme_report import generate_products, ADJECTIVES, NOUNS
 import io
 import sys
 

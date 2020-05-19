@@ -18,16 +18,27 @@ def generate_products(num_products=30):
 
     return products
 
-def inventory_report(products = generate_products()):
+def inventory_report(products):
     '''takes a list of products, and prints a "nice" summary'''
 
+    print("\nACME CORPORATION OFFICIAL INVENTORY REPORT")
+
+    print("Unique product names:", len(products))
+
+    total = 0
     for i in range(len(products)):
-        print("--- Product #" + str(i+1) + " ---")
-        print("Name:", products[i].name)
-        print("Price:", products[i].price)
-        print("Weight:", products[i].weight)
-        print("Flammability:", products[i].flammability)
-        print("\n")
+        total += products[i].price
+    print("Average price:", total / len(products))
+
+    total = 0
+    for i in range(len(products)):
+        total += products[i].weight
+    print("Average weight:", total / len(products))
+
+    total = 0
+    for i in range(len(products)):
+        total += products[i].flammability
+    print("Average flammability:", total / len(products))
 
 if __name__ == '__main__':
     inventory_report(generate_products())

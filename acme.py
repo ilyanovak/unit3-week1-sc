@@ -26,8 +26,10 @@ class Product():
         stealable_value = self.price / self.weight
         if stealable_value < 0.5:
             print("Not so stealable...")
-        elif (stealable_value >= 0.5) & (stealable_value < 1.0):
+        elif stealable_value < 1.0:
             print("Kinda stealable.")
+        else:
+            print("Very stealable!")
 
     def explode(self):
         '''
@@ -42,6 +44,9 @@ class Product():
             print("...fizzle.")
         elif explode_value >= 1.0:
             print("...BABOOM!!")
+        else:
+            print("...BABOOM!!")
+
 
 class BoxingGlove(Product):
     def __init__(self, name):
@@ -65,5 +70,3 @@ class BoxingGlove(Product):
             print("Hey that hurt!")
         else:
             print("OUCH!")
-    
-
